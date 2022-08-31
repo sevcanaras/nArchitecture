@@ -21,5 +21,10 @@ namespace Application.Features.Brands.Rules
             //Error messages could be const variables for multilanguage  support
 
         }
+        public void BrandShouldExistWhenRequested(Brand brand)
+        {
+            if (brand == null) throw new BusinessException("Requested brand does not exist");
+
+        }
     }
 }
