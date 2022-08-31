@@ -2,14 +2,14 @@
 
 namespace Domain.Entities
 {
-    public class Brand : Entity //Sınıfların her zaman imzası olsun dedi. Bu yuzden entityden kaltım aldı.
+    public class Brand : Entity
     {
         public string Name { get; set; }
         public Brand()
         {
         }
 
-        public Brand(int id, string name): this() //Ortak şeylerin çalıştırılması adına basenin constunu çağırdı.
+        public Brand(int id, string name): this()
         {
             Id = id;
             Name = name;
