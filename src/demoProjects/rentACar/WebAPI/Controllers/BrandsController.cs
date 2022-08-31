@@ -1,6 +1,4 @@
 ﻿using Application.Features.Brands.Commands.CreateBrand;
-using Application.Features.Brands.Dtos;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
@@ -12,7 +10,7 @@ namespace WebAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> Add([FromBody] CreateBrandCommand createBrandCommand)
         {
-            CreatedBrandDto result = await Mediator.Send(createBrandCommand);
+            var result = await Mediator.Send(createBrandCommand);
             return Created("", result);
         }
     }
